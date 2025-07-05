@@ -100,17 +100,17 @@ const Hero: NextPage = () => {
   const floatingBadges: FloatingTechBadge[] = [
     {
       text: "React",
-      position: "top-10 left-0",
+      position: "top-10 left-0 lg:left-0",
       color: "bg-cyan-500/10 border-cyan-400/30 text-cyan-400",
     },
     {
       text: "UI/UX",
-      position: "bottom-10 right-0",
+      position: "bottom-10 right-0 lg:right-0",
       color: "bg-pink-500/10 border-pink-400/30 text-pink-400",
     },
     {
       text: "NextJS",
-      position: "top-1/3 right-10",
+      position: "top-1/3 right-10 lg:right-10",
       color: "bg-purple-500/10 border-purple-400/30 text-purple-400",
     },
   ];
@@ -140,24 +140,24 @@ const Hero: NextPage = () => {
       </div>
 
       <div className="absolute inset-0 -z-30 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600 rounded-full filter blur-[150px] opacity-10" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500 rounded-full filter blur-[150px] opacity-10" />
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 lg:w-96 lg:h-96 bg-purple-600 rounded-full filter blur-[150px] opacity-10" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 lg:w-96 lg:h-96 bg-cyan-500 rounded-full filter blur-[150px] opacity-10" />
       </div>
 
-      <div className="container mx-auto px-4 py-24">
+      <div className="container mx-auto px-6 py-20 md:py-24">
         <motion.div
-          className="flex flex-col lg:flex-row items-center justify-between gap-16"
+          className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16"
           variants={containerVariants}
           initial="hidden"
           animate={controls}
           ref={heroRef}
         >
           <motion.div
-            className="lg:w-1/2 text-center lg:text-left relative"
+            className="w-full lg:w-1/2 text-center lg:text-left relative"
             variants={itemVariants}
           >
             <motion.div
-              className="inline-flex items-center mb-8 px-5 py-2.5 bg-gray-900/50 backdrop-blur-md rounded-full border border-purple-500/30 shadow-lg"
+              className="inline-flex items-center mb-6 md:mb-8 px-4 py-2 md:px-5 md:py-2.5 bg-gray-900/50 backdrop-blur-md rounded-full border border-purple-500/30 shadow-lg"
               initial={{ scale: 0.9, rotate: -5 }}
               animate={{
                 scale: 1,
@@ -174,13 +174,13 @@ const Hero: NextPage = () => {
               }}
             >
               <Sparkles className="text-purple-400 mr-2" size={15} />
-              <p className="text-sm font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">
+              <p className="text-xs sm:text-sm font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">
                 Building Cool Websites Since 2022
               </p>
             </motion.div>
 
             <motion.h1
-              className="text-4xl md:text-5xl xl:text-6xl font-bold mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 leading-tight"
               variants={itemVariants}
             >
               <motion.span
@@ -222,26 +222,26 @@ const Hero: NextPage = () => {
             </motion.h1>
 
             <motion.h2
-              className="text-xl md:text-2xl mb-8 text-gray-300 font-light"
+              className="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 text-gray-300 font-light"
               variants={itemVariants}
             >
               <span className="text-purple-300">Roshan Ram</span> • Web Developer • UI Lover
             </motion.h2>
 
             <motion.p
-              className="text-gray-400 max-w-xl mb-10 leading-relaxed font-light"
+              className="text-gray-400 max-w-xl mb-8 md:mb-10 leading-relaxed font-light text-sm sm:text-base"
               variants={itemVariants}
             >
               Hey there! I'm Roshan, and I love building websites that look great and work smoothly. I use tools like React and Next.js to make fun, interactive web experiences.
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-5 items-center"
+              className="flex flex-col sm:flex-row gap-4 items-center"
               variants={itemVariants}
             >
               <motion.a
                 href="#contact"
-                className="relative group flex items-center gap-3 bg-gradient-to-br from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium py-3.5 px-8 rounded-full transition-all duration-500 shadow-xl hover:shadow-2xl overflow-hidden"
+                className="relative group flex items-center gap-2 sm:gap-3 bg-gradient-to-br from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium py-3 px-6 sm:py-3.5 sm:px-8 rounded-full transition-all duration-500 shadow-xl hover:shadow-2xl overflow-hidden text-sm sm:text-base"
                 whileHover={{
                   scale: 1.05,
                 }}
@@ -250,19 +250,19 @@ const Hero: NextPage = () => {
                 <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
                 <span className="relative z-10 flex items-center">
                   Let's Create Something Cool
-                  <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
               </motion.a>
 
               <motion.div
-                className="flex gap-4 mt-4 sm:mt-0"
+                className="flex gap-3 sm:gap-4 mt-3 sm:mt-0"
                 variants={itemVariants}
               >
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={index}
                     href={social.url}
-                    className={`p-3 rounded-full bg-gradient-to-br ${social.color} text-gray-900 shadow-md hover:shadow-lg transition-all`}
+                    className={`p-2.5 sm:p-3 rounded-full bg-gradient-to-br ${social.color} text-gray-900 shadow-md hover:shadow-lg transition-all`}
                     whileHover={{
                       y: -5,
                       scale: 1.1,
@@ -277,13 +277,13 @@ const Hero: NextPage = () => {
             </motion.div>
 
             <motion.div
-              className="mt-14 flex flex-wrap gap-3 justify-center lg:justify-start"
+              className="mt-10 sm:mt-14 flex flex-wrap gap-2 sm:gap-3 justify-center lg:justify-start"
               variants={itemVariants}
             >
               {techStack.map((tech, index) => (
                 <motion.div
                   key={tech}
-                  className="px-4 py-2 bg-gray-900/50 backdrop-blur-sm rounded-full border border-gray-700 text-sm text-gray-200 flex items-center gap-2 shadow-md"
+                  className="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-900/50 backdrop-blur-sm rounded-full border border-gray-700 text-xs sm:text-sm text-gray-200 flex items-center gap-2 shadow-md"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{
                     opacity: 1,
@@ -296,7 +296,7 @@ const Hero: NextPage = () => {
                     borderColor: "rgba(124, 58, 237, 0.8)",
                   }}
                 >
-                  <span className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></span>
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-purple-400 rounded-full animate-pulse"></span>
                   {tech}
                 </motion.div>
               ))}
@@ -304,9 +304,9 @@ const Hero: NextPage = () => {
           </motion.div>
 
           <motion.div
-            className="lg:w-1/3 flex justify-center relative h-[500px]"
+            className="w-full lg:w-1/3 flex justify-center relative h-[350px] sm:h-[400px] md:h-[500px] mt-10 lg:mt-0"
           >
-            <div className="relative w-full h-full">
+            <div className="relative w-full h-full max-w-md">
               <motion.div
                 className="absolute inset-0 rounded-3xl border-2 border-transparent"
                 animate={{
@@ -338,7 +338,7 @@ const Hero: NextPage = () => {
               {floatingBadges.map((badge, index) => (
                 <motion.div
                   key={index}
-                  className={`absolute ${badge.position} ${badge.color} px-4 py-2 rounded-full border backdrop-blur-sm flex items-center gap-2 shadow-lg`}
+                  className={`absolute ${badge.position} ${badge.color} px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border backdrop-blur-sm flex items-center gap-2 shadow-lg text-xs sm:text-sm`}
                   initial={{ scale: 0, opacity: 0 }}
                   animate={{
                     scale: 1,
@@ -354,8 +354,8 @@ const Hero: NextPage = () => {
                     y: -5,
                   }}
                 >
-                  <span className="w-2 h-2 rounded-full bg-current"></span>
-                  <span className="text-sm font-medium">{badge.text}</span>
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-current"></span>
+                  <span className="font-medium">{badge.text}</span>
                 </motion.div>
               ))}
             </div>
